@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <script src="samba_js_common/src/core/DispatchableObject.js"></script>
+        <script src="src/js/views/menu.js"></script>
+        <script src="src/js/views/menuitem.js"></script>
+        <style>
+            html, body {
+              width:  100%;
+              height: 100%;
+              margin: 0px;
+              overflow : hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            document.body.style.margin = 0;
+            var canvas = document.createElement("canvas");
+            canvas.width = screen.width;
+            canvas.height = screen.height;
+            document.body.appendChild(canvas);
+
+            var bg = canvas.getContext("2d");
+            bg.fillStyle = "#212121";
+            bg.fillRect(0, 0, screen.width, screen.height);
+
+            var menu = new Menu(canvas, "#424242", [{
+                label : "Home",
+                action : "section_1"
+            }, {
+                label : "Section 2",
+                action : "section_2"
+            }, {
+                label : "Another Section",
+                action : "section_3"
+            }]); 
+        </script>
+    </body>
+</html>
